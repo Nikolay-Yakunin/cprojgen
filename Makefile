@@ -9,14 +9,13 @@ all: build
 build: build-linux build-windows
 
 $(BUILD_DIR):
-	@echo "Создаем папку $(BUILD_DIR)..."
 	mkdir -p $(BUILD_DIR)
 
 build-linux: $(BUILD_DIR)
-	GOOS=linux GOARCH=amd64 go build -o $(BUILD_DIR)/$(BINARY_NAME) main.go
+	GOOS=linux GOARCH=amd64 go build -o $(BUILD_DIR)/$(BINARY_NAME) $(SRC)
 
 build-windows: $(BUILD_DIR)
-	GOOS=windows GOARCH=amd64 go build -o $(BUILD_DIR)/$(BINARY_NAME).exe main.go
+	GOOS=windows GOARCH=amd64 go build -o $(BUILD_DIR)/$(BINARY_NAME).exe $(SRC)
 
 fmt:
 	go fmt ./...
