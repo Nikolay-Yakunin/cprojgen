@@ -30,11 +30,11 @@
 3. Запустите исполняемый файл:
    - Для Linux:
      ```sh
-     ./build/cprojgen --number file.txt
+     ./build/cprojgen
      ```
    - Для Windows:
      ```sh
-     .\build\cprojgen.exe --number file.txt
+     .\build\cprojgen.exe
      ```
 
 ## Добавление бинарного файла в PATH
