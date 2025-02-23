@@ -16,8 +16,8 @@
 
 1. Клонируйте репозиторий:
    ```sh
-   git clone https://github.com/Nikolay-Yakunin/go-cat.git
-   cd go-cat
+   git clone https://github.com/Nikolay-Yakunin/cprojgen.git
+   cd cprojgen
    ```
 
 2. Соберите проект:
@@ -30,15 +30,15 @@
 3. Запустите исполняемый файл:
    - Для Linux:
      ```sh
-     ./build/linux/go-cat --number file.txt
+     ./build/cprojgen --number file.txt
      ```
    - Для Windows:
      ```sh
-     .\build\windows\go-cat.exe --number file.txt
+     .\build\cprojgen.exe --number file.txt
      ```
 
 ## Добавление бинарного файла в PATH
-Чтобы было проще использовать go-cat из любого места, вы можете добавить бинарный файл в PATH вашей системы. Используйте сценарии для Bash (для Unix-подобных систем) и PowerShell (для Windows).
+Чтобы было проще использовать cprojgen из любого места, вы можете добавить бинарный файл в PATH вашей системы. Используйте сценарии для Bash (для Unix-подобных систем) и PowerShell (для Windows).
 
 ## Для Unix-подобных систем (сценарий Bash)
 Убедитесь, что у сценария есть права на выполнение:
