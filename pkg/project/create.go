@@ -1,9 +1,5 @@
 package project
 
-import (
-
-)
-
 // CreateProjectStructure создаёт директории, файлы и Makefile.
 func CreateProjectStructure(root, projectType string) error {
 	dirs := []string{"src", "include", "build", "bin", "tests"}
