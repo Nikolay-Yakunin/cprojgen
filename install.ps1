@@ -16,13 +16,13 @@ if (-not (Test-Path $destDir)) {
 Write-Host "Building the binary..."
 make build-windows
 
-if (-not (Test-Path "build\$binaryName")) {
+if (-not (Test-Path "build\windows\$binaryName")) {
     Write-Host "Failed to build the binary."
     exit 1
 }
 
 Write-Host "Copying binary to $destDir..."
-Copy-Item "build\$binaryName" "$destDir\" -Force
+Copy-Item "build\windows\$binaryName" "$destDir\" -Force
 
 if ($?) {
     Write-Host "Binary successfully installed to $destDir"
