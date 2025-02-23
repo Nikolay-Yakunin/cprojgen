@@ -1,5 +1,4 @@
-module cprojgen
+module github.com/Nikolay-Yakunin/cprojgen
 
 go 1.22.6
 
-replace cprojgen/pkg/project => ./pkg/project

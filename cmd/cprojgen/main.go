@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"cprojgen/pkg/project"
+	"github.com/Nikolay-Yakunin/cprojgen/pkg/project"
 )
 
 func main() {
