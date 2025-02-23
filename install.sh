@@ -1,23 +1,27 @@
-#!/bin/bash
-# Скрипт установки для Linux/Unix
-# Этот скрипт компилирует программу, создаёт папку build и копирует бинарник в /usr/local/bin
+# chmod +x install.sh
 
-set -e
+# if [ "$EUID" -ne 0 ]; then
+#   echo "Please run as root"
+#   exit
+# fi
 
-echo "Сборка cprojgen..."
-go build -o cprojgen main.go
+BINARY_NAME="cprojgen" # Change this to the name of your binary (if you want)
+DEST_DIR="/usr/local/bin"
 
-echo "Создание папки build..."
-mkdir -p build
+echo "Building the binary..."
+make build-linux
 
-INSTALL_DIR="/usr/local/bin"
-echo "Установка cprojgen в ${INSTALL_DIR}..."
-
-if [ "$(id -u)" -ne 0 ]; then
-    echo "Необходимы права суперпользователя. Используем sudo..."
-    sudo cp cprojgen "${INSTALL_DIR}/"
-else
-    cp cprojgen "${INSTALL_DIR}/"
+if [ ! -f "build/$BINARY_NAME" ]; then
+  echo "Failed to build the binary."
+  exit 1
 fi
 
-echo "Установка завершена!"
+echo "Copying binary to $DEST_DIR..."
+cp "build/$BINARY_NAME" "$DEST_DIR/"
+
+if [ $? -eq 0 ]; then
+  echo "Binary successfully installed to $DEST_DIR"
+else
+  echo "Failed to copy binary to $DEST_DIR"
+  exit 1
+fi
